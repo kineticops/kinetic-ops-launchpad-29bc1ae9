@@ -1,4 +1,5 @@
 import { useFadeIn } from "@/hooks/useFadeIn";
+import WhatsAppChat from "./WhatsAppChat";
 
 const TOOLS = [
   { icon: "📧", name: "Gmail" },
@@ -12,6 +13,12 @@ const TOOLS = [
   { icon: "🔗", name: "API personalizada" },
 ];
 
+const INTEGRATION_MESSAGES = [
+  { from: "bot" as const, text: "✅ Cita confirmada\n\n📅 Se ha añadido a Google Calendar\n📧 Confirmación enviada por email\n📋 Lead actualizado en HubSpot\n\n¡Todo sincronizado automáticamente! 🔄", time: "14:30" },
+  { from: "user" as const, text: "¿Puedo recibir un recordatorio mañana?", time: "14:31" },
+  { from: "bot" as const, text: "¡Por supuesto! ⏰\n\nTe enviaré un recordatorio:\n📱 24h antes por WhatsApp\n📧 2h antes por email\n\n¿Necesitas algo más?", time: "14:31" },
+];
+
 export default function Integrations() {
   const ref = useFadeIn();
 
@@ -19,7 +26,7 @@ export default function Integrations() {
     <section className="section-gray section-padding">
       <div ref={ref} className="fade-section max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <div>
-          <span className="text-blue-bright text-xs font-bold uppercase tracking-wider mb-3 inline-block">
+          <span className="text-primary text-xs font-bold uppercase tracking-widest mb-3 inline-block">
             ECOSISTEMA DE INTEGRACIONES
           </span>
           <h2 className="text-navy text-2xl sm:text-3xl font-bold mb-4">
@@ -32,24 +39,27 @@ export default function Integrations() {
             {TOOLS.map((t, i) => (
               <div
                 key={i}
-                className="flex items-center gap-2 bg-card border border-border rounded-lg px-4 py-3 text-sm font-medium text-foreground hover:shadow-md hover:-translate-y-0.5 transition-all"
+                className="flex items-center gap-2 bg-card border border-border rounded-xl px-4 py-3 text-sm font-medium text-foreground hover:shadow-lg hover:-translate-y-1 hover:border-primary/30 transition-all duration-300"
               >
-                <span>{t.icon}</span>
+                <span className="text-lg">{t.icon}</span>
                 <span>{t.name}</span>
               </div>
             ))}
           </div>
           <a
             href="#form"
-            className="inline-flex items-center gap-2 bg-blue-bright text-primary-foreground px-6 py-3 rounded-full font-semibold text-sm hover:opacity-90 transition-opacity"
+            className="inline-flex items-center gap-2 bg-primary text-white px-8 py-3.5 rounded-full font-bold text-sm hover:shadow-lg hover:shadow-primary/30 transition-all hover:-translate-y-0.5"
           >
             Solicita una demo
+            <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
         </div>
-        <div className="bg-card border border-border rounded-2xl shadow-md min-h-[420px] flex items-center justify-center">
-          <div className="bg-placeholder rounded-xl w-[90%] h-[380px] flex items-center justify-center">
-            <span className="text-navy font-semibold opacity-60">Integraciones Kinetic Ops</span>
-          </div>
+        <div className="flex justify-center">
+          <WhatsAppChat
+            messages={INTEGRATION_MESSAGES}
+            contactName="Kinetic Ops"
+            contactSubtitle="Sistema Integrado · Activo"
+          />
         </div>
       </div>
     </section>
