@@ -4,57 +4,56 @@ import WhatsAppChat from "./WhatsAppChat";
 
 const FEATURES = [
   {
-    tab: "MARKETING",
-    heading: "Impacta a través del canal favorito de tu cliente.",
-    subheading: "+90% de tasa de lectura.",
+    tab: "AGENDA CITAS",
+    heading: "Tus pacientes agendan solos por WhatsApp. Sin llamar.",
+    subheading: "Reducción del 80% en llamadas telefónicas.",
     bullets: [
-      { bold: "Envía promociones personalizadas", rest: " o estacionales." },
-      { bold: "Comparte nuevos", rest: " productos y servicios." },
-      { bold: "Crea anuncios click-to-WA", rest: " y conviértelos en conversaciones." },
-      { bold: "Resuelve preguntas frecuentes", rest: " acerca de tus productos." },
+      { bold: "Agenda automática", rest: " conectada a Google Calendar." },
+      { bold: "El paciente elige día y hora", rest: " sin intervención humana." },
+      { bold: "Confirmación instantánea", rest: " con todos los detalles." },
+      { bold: "Gestión de reprogramaciones", rest: " y cancelaciones." },
     ],
     messages: [
-      { from: "bot" as const, text: "🎉 ¡Oferta especial para ti!\n\nBlanqueamiento dental profesional con un 35% de descuento esta semana.\n\n¿Te interesa reservar?", time: "14:00" },
-      { from: "user" as const, text: "¡Sí! ¿Qué incluye?", time: "14:01" },
-      { from: "bot" as const, text: "Incluye:\n✨ Diagnóstico completo\n✨ Limpieza previa\n✨ Blanqueamiento LED\n✨ Kit de mantenimiento\n\n💰 Solo 249€ (antes 389€)\n\n¿Quieres reservar tu plaza?", time: "14:01" },
-      { from: "user" as const, text: "Sí, me apunto", time: "14:02" },
-      { from: "bot" as const, text: "✅ ¡Reserva confirmada!\nTe enviaremos los detalles por WhatsApp 📲", time: "14:02" },
+      { from: "bot" as const, text: "¡Hola! 👋 ¿Quieres agendar una cita?\n\n¿Qué servicio necesitas?\n\n🦷 Limpieza\n✨ Blanqueamiento\n🔧 Empaste\n📋 Revisión general", time: "10:00" },
+      { from: "user" as const, text: "Limpieza dental", time: "10:01" },
+      { from: "bot" as const, text: "¡Perfecto! 🦷\n\nHorarios disponibles esta semana:\n\n📅 Lunes 10:00h\n📅 Miércoles 16:30h\n📅 Jueves 17:30h\n\n¿Cuál te viene mejor?", time: "10:01" },
+      { from: "user" as const, text: "Jueves 17:30", time: "10:02" },
+      { from: "bot" as const, text: "✅ ¡Cita confirmada!\n\n📅 Jueves 3 abril — 17:30h\n🦷 Limpieza dental\n📍 Clínica Dental Sonríe\n\n📅 Añadida a tu calendario\n🔔 Te avisaré 24h antes\n\n¡Hasta entonces! 😊", time: "10:02" },
     ],
   },
   {
-    tab: "VENTAS",
-    heading: "Multiplica tus conversiones con seguimiento automático.",
-    subheading: "3× más cierres.",
+    tab: "RECORDATORIOS",
+    heading: "Reduce un 60% los no-shows con recordatorios automáticos.",
+    subheading: "Sin que tu equipo tenga que acordarse.",
     bullets: [
-      { bold: "Seguimiento automático", rest: " de leads desde el primer contacto." },
-      { bold: "Cualificación inteligente", rest: " para priorizar oportunidades." },
-      { bold: "Pipeline siempre actualizado", rest: " con cada interacción." },
-      { bold: "Alertas de leads calientes", rest: " para no perder ninguna venta." },
+      { bold: "Recordatorio 24h antes", rest: " por WhatsApp automáticamente." },
+      { bold: "Confirmación con un click", rest: " — el paciente responde 'Sí' o reprograma." },
+      { bold: "Alerta al equipo", rest: " si el paciente cancela." },
+      { bold: "Relleno automático", rest: " de huecos por cancelaciones." },
     ],
     messages: [
-      { from: "bot" as const, text: "¡Hola Carlos! 👋\n\nHemos visto que pediste información sobre implantes dentales. ¿Puedo ayudarte con alguna duda?", time: "11:00" },
-      { from: "user" as const, text: "Sí, ¿cuánto cuesta un implante?", time: "11:02" },
-      { from: "bot" as const, text: "El precio depende del caso, pero nuestros implantes desde 890€ incluyen:\n\n🦷 Implante titanio\n👨‍⚕️ Cirugía + corona\n📋 Garantía 10 años\n\n¿Te agendo una valoración gratuita?", time: "11:02" },
-      { from: "user" as const, text: "Sí, por favor", time: "11:03" },
-      { from: "bot" as const, text: "📅 Valoración agendada\n🗓 Viernes 11 abril - 10:00h\n📍 Clínica Dental Sonríe\n\n¡Te esperamos! 😊", time: "11:03" },
+      { from: "bot" as const, text: "📋 Recordatorio de cita\n\nHola Ana 👋\n\nTe recordamos tu cita mañana:\n\n📅 Jueves 3 abril\n🕐 17:30h\n🦷 Limpieza dental\n📍 Clínica Dental Sonríe\n\n¿Confirmas asistencia?\n\n1️⃣ Sí, confirmo\n2️⃣ Necesito cambiar la hora", time: "18:00" },
+      { from: "user" as const, text: "1", time: "18:02" },
+      { from: "bot" as const, text: "✅ ¡Asistencia confirmada!\n\nRecuerda:\n🚗 Parking gratuito en C/ Mayor 12\n⏰ Llega 5 min antes\n\n¡Te esperamos mañana! 😊", time: "18:02" },
     ],
   },
   {
-    tab: "ATENCIÓN AL CLIENTE",
-    heading: "Automatiza tu atención y reduce costes un 70%.",
-    subheading: "Disponible 24/7.",
+    tab: "CONSULTAS 24/7",
+    heading: "Responde consultas a las 3 AM sin contratar a nadie.",
+    subheading: "El 60% de las preguntas llegan fuera de horario.",
     bullets: [
-      { bold: "Resolución 24/7", rest: " sin personal extra." },
-      { bold: "Envío automático de facturas", rest: " y presupuestos." },
-      { bold: "Estado de citas en tiempo real", rest: " para tus pacientes." },
-      { bold: "Recordatorios automáticos", rest: " para reducir no-shows un 60%." },
+      { bold: "Preguntas frecuentes", rest: " respondidas al instante." },
+      { bold: "Información de precios", rest: " y servicios disponible 24/7." },
+      { bold: "Derivación inteligente", rest: " a un humano cuando hace falta." },
+      { bold: "Tono profesional", rest: " y personalizado de tu clínica." },
     ],
     messages: [
-      { from: "bot" as const, text: "📋 Recordatorio de cita\n\nHola Ana, te recordamos tu cita mañana:\n\n📅 Jueves 3 abril\n🕐 17:30h\n🦷 Limpieza dental\n\n¿Confirmas asistencia?", time: "18:00" },
-      { from: "user" as const, text: "¿Puedo cambiarla al viernes?", time: "18:05" },
-      { from: "bot" as const, text: "¡Claro! 😊 Disponibilidad viernes:\n\n🕐 09:00h\n🕐 12:30h\n🕐 16:00h\n\n¿Cuál prefieres?", time: "18:05" },
-      { from: "user" as const, text: "A las 12:30", time: "18:06" },
-      { from: "bot" as const, text: "✅ Cita reprogramada:\n📅 Viernes 4 abril - 12:30h\n\nTe enviaremos otro recordatorio mañana. ¡Hasta entonces! 👋", time: "18:06" },
+      { from: "user" as const, text: "Hola, ¿cuánto cuesta un blanqueamiento?", time: "23:45" },
+      { from: "bot" as const, text: "¡Hola! 😊 Gracias por tu interés.\n\nNuestro blanqueamiento dental:\n\n✨ Blanqueamiento LED profesional\n💰 Desde 249€\n⏱ Duración: 1h aprox.\n\nIncluye diagnóstico previo + kit de mantenimiento.\n\n¿Te gustaría agendar una consulta gratuita de valoración?", time: "23:45" },
+      { from: "user" as const, text: "Sí, el lunes si puede ser", time: "23:46" },
+      { from: "bot" as const, text: "📅 Disponibilidad lunes:\n\n🕐 09:30h\n🕐 11:00h\n🕐 16:00h\n\n¿Cuál prefieres?", time: "23:46" },
+      { from: "user" as const, text: "11:00", time: "23:47" },
+      { from: "bot" as const, text: "✅ ¡Cita agendada!\n\n📅 Lunes 7 abril — 11:00h\n✨ Valoración blanqueamiento\n📍 Clínica Dental Sonríe\n\n¡Descansa, nos vemos el lunes! 🌙", time: "23:47" },
     ],
   },
 ];
@@ -65,12 +64,15 @@ export default function FeaturesTabs() {
   const f = FEATURES[active];
 
   return (
-    <section className="relative overflow-hidden">
-      {/* Blue gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary via-[#0088ff] to-[#00aaff]" />
-      <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cg%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.05%22%3E%3Cpath%20d%3D%22M36%2034v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6%2034v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6%204V0H4v4H0v2h4v4h2V6h4V4H6z%22%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E')] opacity-30" />
+    <section className="section-padding bg-background">
+      <div ref={ref} className="fade-section max-w-7xl mx-auto">
+        <div className="text-center mb-12">
+          <span className="text-primary text-xs font-bold uppercase tracking-widest mb-3 inline-block">FUNCIONALIDADES</span>
+          <h2 className="text-navy text-2xl sm:text-3xl lg:text-4xl font-bold mb-4">
+            3 funciones que transforman tu clínica
+          </h2>
+        </div>
 
-      <div ref={ref} className="fade-section relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
         {/* Tabs */}
         <div className="flex flex-wrap gap-2 justify-center mb-14">
           {FEATURES.map((feat, i) => (
@@ -79,8 +81,8 @@ export default function FeaturesTabs() {
               onClick={() => setActive(i)}
               className={`px-6 py-2.5 rounded-full text-sm font-bold transition-all ${
                 i === active
-                  ? "bg-white text-primary shadow-lg"
-                  : "bg-white/10 text-white/80 hover:bg-white/20 border border-white/20"
+                  ? "bg-primary text-white shadow-lg shadow-primary/20"
+                  : "bg-secondary text-muted-foreground hover:bg-secondary/80 border border-border"
               }`}
             >
               {feat.tab}
@@ -101,26 +103,26 @@ export default function FeaturesTabs() {
 
           {/* Right — Text */}
           <div className="order-1 lg:order-2">
-            <h3 className="text-white text-2xl sm:text-3xl font-bold mb-2 leading-snug">{f.heading}</h3>
-            <p className="text-white/80 text-xl font-semibold mb-8">{f.subheading}</p>
+            <h3 className="text-navy text-2xl sm:text-3xl font-bold mb-2 leading-snug">{f.heading}</h3>
+            <p className="text-primary text-lg font-semibold mb-8">{f.subheading}</p>
             <ul className="space-y-4 mb-10">
               {f.bullets.map((b, i) => (
                 <li key={i} className="flex items-start gap-3">
-                  <div className="w-7 h-7 rounded-lg bg-white/20 flex items-center justify-center shrink-0 mt-0.5">
-                    <svg width="14" height="14" fill="white" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                  <div className="w-7 h-7 rounded-lg bg-primary/10 flex items-center justify-center shrink-0 mt-0.5">
+                    <svg width="14" height="14" fill="hsl(var(--primary))" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" /></svg>
                   </div>
-                  <span className="text-white/90 text-base">
-                    <strong>{b.bold}</strong>{b.rest}
+                  <span className="text-gray-desc text-base">
+                    <strong className="text-navy">{b.bold}</strong>{b.rest}
                   </span>
                 </li>
               ))}
             </ul>
             <a
               href="#form"
-              className="inline-flex items-center gap-2 bg-white text-primary px-8 py-3.5 rounded-full font-bold text-base hover:shadow-lg transition-all hover:-translate-y-0.5"
+              className="inline-flex items-center gap-2 bg-primary text-white px-8 py-3.5 rounded-full font-bold text-base hover:shadow-lg hover:shadow-primary/20 transition-all hover:-translate-y-0.5"
             >
-              Hablar con un especialista
-              <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              Quiero esto para mi clínica
+              <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
             </a>
           </div>
         </div>
